@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en" style="--ui-scale:1.33">
+<html lang="fr" style="--ui-scale:1.33">
 
 <head>
+    <meta charset="utf-8">
     <title>shapez Demo - Factory Automation Game</title>
     <!-- mobile stuff -->
     <meta name="format-detection" content="telephone=no">
@@ -295,7 +296,7 @@
     </style>
     <script type="text/javascript">
         var bundleSrc = 'bundle.js';
-        var bundleIntegrity = 'sha256-t1QtOasySGLuQ2fbvveoUxL4WSRbD2sYr3ISMeoWNrM=';
+        var bundleIntegrity = 'sha256-9UIvcjq9S8Bz3wcIJ7pNgW3U0da0Zqx3Swa6vDlX17M='; // Joxia : empreinte recalculée après modification de bundle.js
         (function() {
             var loadTimeout = null;
             var callbackDone = false;
@@ -352,18 +353,18 @@
 
                 var heading = document.createElement("h3");
                 heading.classList.add("heading");
-                heading.innerText = "Fatal Error";
+                heading.innerText = "Erreur fatale";
                 inner.appendChild(heading);
 
                 var content = document.createElement("p");
                 content.classList.add("content");
-                content.innerText = error || (event && event.message) || event || "Unknown Error";
+                content.innerText = error || (event && event.message) || event || "Erreur inconnue";
                 inner.appendChild(content);
 
                 var discordLink = document.createElement("p");
                 discordLink.classList.add("discordLink");
                 discordLink.innerHTML =
-                    "Please report this error in the <strong>#bugs</strong> channel of the <a href='https://discord.gg/rtuRRJDc7u' target='_blank'>official discord</a>!";
+                    "Signalez cette erreur dans le salon <strong>#bugs</strong> du <a href='https://discord.gg/rtuRRJDc7u' target='_blank'>Discord officiel</a> !";
 
                 inner.appendChild(discordLink);
 
@@ -404,7 +405,7 @@
             function progressHandler(progress) {
                 var progressElement = document.querySelector("#ll_preload_status");
                 if (progressElement) {
-                    progressElement.innerText = "Downloading Bundle (" + Math.round(progress * 1200) + " / 1200 KB)";
+                    progressElement.innerText = "Téléchargement du jeu (" + Math.round(progress * 1200) + " / 1200 Ko)";
                 }
                 var barElement = document.querySelector("#ll_progressbar span");
                 if (barElement) {
@@ -476,11 +477,11 @@
             <div class="ll_text" id="preload_ll_text"></div>
             <div id="ll_progressbar">
                 <span></span>
-                <div id="ll_preload_status">Downloading Game</div>
+                <div id="ll_preload_status">Téléchargement du jeu</div>
             </div>
             <div id="ll_standalone">
-                Page does not load? Try the
-                <a href="https://get.shapez.io/slowpageload" target="_blank">Steam Version</a>!
+                La page ne se charge pas ? Essayez la
+                <a href="https://get.shapez.io/slowpageload" target="_blank">version Steam</a> !
             </div>
         </div>
     </div>
